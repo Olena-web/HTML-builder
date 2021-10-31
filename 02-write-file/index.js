@@ -5,7 +5,7 @@ const { stdin: input, stdout: output } = require("process");
 const rl = readline.createInterface({ input, output });
 const stdout = process.stdout;
 const stdin = process.stdin;
-const filePath = path.resolve("02-write-file", "answer.txt");
+const filePath = path.join(__dirname, "answer.txt");
 
 rl.question("Hi! What do you think of Node.js?\n", (data) => {
   stdout.write(
