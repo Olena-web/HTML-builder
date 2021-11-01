@@ -12,9 +12,9 @@ fs.readdir(folderPath, { withFileTypes: true }, (err, files) => {
       let size;
       fs.stat(filePath, (err, stats) => {
         if (err) throw err;
-        size = stats.size;
+        size = stats.size / 1024;
         stdout.write(
-          `${fileName}` + " " + `${fileExt}` + " " + `${size}` + " \n"
+          `${fileName}` + " - " + `${fileExt}` + " - " + `${size}` + " kb\n"
         );
       });
     }
