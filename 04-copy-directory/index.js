@@ -27,8 +27,3 @@ fs.readdir(source, { withFileTypes: true }, (err, files) => {
     }
   });
 });
-// 1. запускаем fs.readDir на папку.
-// 2. в колбеке идем и говорим fs.stat на строку ответа
-// 3. в колбеке смотрим файл это или папка. Если папка — то пункт 1.
-// 4. если нет - копируем файл ( read - write)
-//node 04-copy-directory
