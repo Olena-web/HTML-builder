@@ -9,12 +9,17 @@ const filePath = path.join(__dirname, "answer.txt");
 rl.question("Hi! What do you think of Node.js?\n", (data) => {
   rl.on("line", function (line) {
     if (line === "exit") rl.close();
+ else {
+      stdin.on("data", (data) => {
+        fs.appendFile(filePath, data, (err) => {
+          if (err) throw err;
+        });
+      });
+    }
   }).on("close", function () {
     process.exit(0);
   });
-  stdout.write(
-    `You can writedown something or To exit, press ^C or type exit\n`
-  );
+ 
   fs.writeFile(filePath, data + "\n", (err) => {
     if (err) throw err;
   });
