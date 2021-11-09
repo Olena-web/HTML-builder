@@ -14,10 +14,6 @@ function copyStyle() {
       if (err) {
         return console.error(err);
       }
-      // fs.unlink(distPath, function (err) {
-      //   if (err) return console.log(err);
-      //   console.log("file remove for change");
-      // });
     });
     files.forEach((file) => {
       if (file.isFile()) {
